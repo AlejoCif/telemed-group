@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Misión · TeleMed Group</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+  /* === Efecto máquina de escribir === */
+  .typing-text {
+    display: inline-block;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(20, end) forwards, blink 0.7s step-end infinite;
+  }
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 20ch; }
+  }
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  /* === Figuras de fondo === */
+  body { position: relative; background-color: #ffffff; overflow-x: hidden; }
+  .background-shapes { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+  .shape { position: absolute; opacity: 0.07; filter: blur(0.5px); animation: floaty 10s ease-in-out infinite; }
+  .circle { border-radius: 50%; }
+  .square { border-radius: 16px; }
+  .triangle { width: 0; height: 0; border-left: 80px solid transparent; border-right: 80px solid transparent; border-bottom: 140px solid #0ea5e9; opacity: 0.05; }
+  .shape-blue   { background:#3b82f6; width:260px; height:260px; top:-100px; left:-80px; border-radius:50%; }
+  .shape-green  { background:#22c55e; width:200px; height:200px; bottom:-60px; right:-60px; border-radius:20%; }
+  .shape-yellow { background:#facc15; width:180px; height:180px; top:40%; left:75%; transform:rotate(25deg); }
+  .shape-purple { background:#8b5cf6; width:160px; height:160px; bottom:25%; left:10%; border-radius:50%; }
+  .shape-square { background:#06b6d4; width:140px; height:140px; top:20%; right:10%; border-radius:12px; transform:rotate(10deg); opacity:0.06; }
+  @keyframes floaty { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-10px) rotate(3deg)} }
+  </style>
+</head>
+
+<body class="text-slate-900 overflow-x-hidden">
+
+  <!-- Fondo con figuras geométricas -->
+  <div class="background-shapes">
+    <div class="shape shape-blue circle"></div>
+    <div class="shape shape-green square"></div>
+    <div class="shape shape-yellow circle"></div>
+    <div class="shape shape-purple circle"></div>
+    <div class="shape shape-square square"></div>
+    <div class="shape triangle" style="top:60%;left:30%;transform:rotate(15deg);"></div>
+  </div>
+
+  <div class="relative z-10">
+
+    <!-- Header -->
+    <header class="bg-white border-b sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <a href="index.html">
+            <img src="https://telemed-group.cl/img/TELEMED_LOGO-05.jpg" alt="logo" class="w-[90px] h-[90px] rounded-full object-contain" />
+          </a>
+          <span class="font-semibold text-xl text-[#d38a41] typing-text overflow-hidden whitespace-nowrap border-r-2 border-white pr-2">Estas en Telemed Group</span>
+        </div>
+
+        <div>
+          <!-- Selector con banderas -->
+          <div class="relative inline-block text-left">
+            <button id="countryButton"
+                  class="flex items-center gap-2 px-4 py-2 bg-transparent border border-gray-300 text-slate-800 rounded-lg hover:bg-gray-50 transition">
+              <img id="selectedFlag" src="https://flagcdn.com/w20/cl.png" alt="Bandera" class="w-5 h-4 rounded-sm">
+              <span id="selectedCountry">Selecciona tu país</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+
+            <div id="countryMenu"
+                 class="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 text-gray-800 overflow-hidden z-50">
+              <a href="https://telemed-chile.cl/"
+                 class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 transition">
+                <img src="https://flagcdn.com/w20/cl.png" alt="Chile" class="w-5 h-4 rounded-sm">
+                <span>Telemed Chile</span>
+              </a>
+              <a href="http://telemed-dominicana.do/"
+                 class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 transition">
+                <img src="https://flagcdn.com/w20/do.png" alt="República Dominicana" class="w-5 h-4 rounded-sm">
+                <span>Telemed Dominicana</span>
+              </a>
+              <a href="https://telemed-colombia.com.co/"
+                 class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 transition">
+                <img src="https://flagcdn.com/w20/co.png" alt="Colombia" class="w-5 h-4 rounded-sm">
+                <span>Telemed Colombia</span>
+              </a>
+            </div>
+          </div>
+
+          <script>
+            const btn = document.getElementById('countryButton');
+            const menu = document.getElementById('countryMenu');
+            btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+            document.addEventListener('click', e => {
+              if (!btn.contains(e.target) && !menu.contains(e.target)) menu.classList.add('hidden');
+            });
+          </script>
+        </div>
+      </div>
+
+      <!-- Nav secundaria -->
+      <nav class="border-t border-gray-100 bg-white">
+        <div class="max-w-6xl mx-auto px-4 flex justify-center gap-8">
+          <a href="mision.html"
+             class="py-2 text-sm font-semibold tracking-widest text-[#d38a41] border-b-2 border-[#d38a41] transition">
+            MISIÓN
+          </a>
+          <a href="#vision"
+             class="py-2 text-sm font-semibold tracking-widest text-slate-600 hover:text-[#d38a41] border-b-2 border-transparent hover:border-[#d38a41] transition">
+            VISIÓN
+          </a>
+          <a href="#educacion"
+             class="py-2 text-sm font-semibold tracking-widest text-slate-600 hover:text-[#d38a41] border-b-2 border-transparent hover:border-[#d38a41] transition">
+            EDUCACIÓN
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-14 space-y-12">
+
+      <!-- ¿Quiénes Somos? -->
+      <section>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-[#d38a41] mb-6">¿Quiénes Somos?</h1>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          El 12 de octubre de 2017 nace en Chile <strong>Telemed-Chile</strong>. El objetivo principal es la educación y atención al paciente sobre su procedimiento, la transformación de imágenes médicas, consultas de audio y video en tiempo real. Desde entonces se ha continuado innovando en la implementación de tecnología.
+        </p>
+        <p class="text-slate-600 text-lg leading-relaxed mt-4">
+          Dada esta implementación, Telemed-Chile desarrolló el programa <strong>"Cuidarte"</strong>, que corresponde a la atención domiciliaria para los cuidados paliativos y medicina del dolor. Desde el año 2019 contamos con un programa de Cuidados Paliativos en Colombia, llamado <strong>"Bhavati-Volviendo a Vivir"</strong> entregado por Bhavati - Ips. SAS, el cual nos ha impulsado a seguir creciendo en esta área, con el fin de llevar nuestros conocimientos para el cuidado y educación a cada paciente y familia que está afrontando una enfermedad crónica, degenerativa, irreversible y de alto impacto para su vida.
+        </p>
+      </section>
+
+      <!-- Misión -->
+      <section id="mision" class="bg-orange-50 rounded-2xl p-8 border border-orange-100">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-[#d38a41] flex items-center justify-center text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-extrabold text-[#d38a41]">Misión</h2>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          Brindar un apoyo especializado y compasivo a pacientes con dolor crónico, ayudándolos a manejar su dolor y fortalecer su bienestar emocional a través de técnicas probadas y acompañamiento constante.
+        </p>
+      </section>
+
+      <!-- Visión -->
+      <section id="vision" class="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-full bg-[#5296bb] flex items-center justify-center text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+            </svg>
+          </div>
+          <h2 class="text-2xl font-extrabold text-[#5296bb]">Visión</h2>
+        </div>
+        <p class="text-slate-600 text-lg leading-relaxed">
+          Ser un referente en el apoyo integral a personas que enfrentan dolor crónico, logrando que cada paciente alcance un bienestar emocional duradero y una mejor calidad de vida, acompañado por su familia en un entorno de comprensión y empatía.
+        </p>
+      </section>
+
+      <!-- Valores -->
+      <section>
+        <h2 class="text-2xl font-extrabold text-slate-800 mb-6">Valores</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+
+          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 rounded-full bg-[#d38a41]/10 flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#d38a41]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-800 text-lg">Humanismo Médico</h3>
+          </div>
+
+          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 rounded-full bg-[#d38a41]/10 flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#d38a41]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-800 text-lg">Profesionalidad</h3>
+          </div>
+
+          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm hover:shadow-md transition">
+            <div class="w-12 h-12 rounded-full bg-[#d38a41]/10 flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#d38a41]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-800 text-lg">Responsabilidad</h3>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b0b0b] border-t border-gray-700 text-gray-300 mt-16">
+      <div class="max-w-6xl mx-auto px-4 py-8 text-center text-sm space-y-3">
+        <p>TeleMed Group © <span id="year"></span>. Todos los derechos reservados.</p>
+        <div class="flex justify-center gap-6 text-gray-400 text-sm">
+          <a href="#" class="hover:text-white transition">Política de Privacidad</a>
+          <a href="https://telemed-chile.cl/terminos.html" class="hover:text-white transition">Términos de Servicio</a>
+          <a href="https://telemed-chile.cl/nosotros.html" class="hover:text-white transition">Nosotros</a>
+          <a href="index.html#contacto" class="hover:text-white transition">Contacto</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
