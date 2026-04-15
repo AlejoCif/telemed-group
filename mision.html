@@ -64,47 +64,6 @@
           <span class="font-semibold text-xl text-[#d38a41] typing-text overflow-hidden whitespace-nowrap border-r-2 border-white pr-2">Estas en Telemed Group</span>
         </div>
 
-        <div>
-          <!-- Selector con banderas -->
-          <div class="relative inline-block text-left">
-            <button id="countryButton"
-                  class="flex items-center gap-2 px-4 py-2 bg-transparent border border-gray-300 text-slate-800 rounded-lg hover:bg-gray-50 transition">
-              <img id="selectedFlag" src="https://flagcdn.com/w20/cl.png" alt="Bandera" class="w-5 h-4 rounded-sm">
-              <span id="selectedCountry">Selecciona tu país</span>
-              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-              </svg>
-            </button>
-
-            <div id="countryMenu"
-                 class="hidden absolute right-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-200 text-gray-800 overflow-hidden z-50">
-              <a href="https://telemed-chile.cl/"
-                 class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 transition">
-                <img src="https://flagcdn.com/w20/cl.png" alt="Chile" class="w-5 h-4 rounded-sm">
-                <span>Telemed Chile</span>
-              </a>
-              <a href="http://telemed-dominicana.do/"
-                 class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 transition">
-                <img src="https://flagcdn.com/w20/do.png" alt="República Dominicana" class="w-5 h-4 rounded-sm">
-                <span>Telemed Dominicana</span>
-              </a>
-              <a href="https://telemed-colombia.com.co/"
-                 class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 transition">
-                <img src="https://flagcdn.com/w20/co.png" alt="Colombia" class="w-5 h-4 rounded-sm">
-                <span>Telemed Colombia</span>
-              </a>
-            </div>
-          </div>
-
-          <script>
-            const btn = document.getElementById('countryButton');
-            const menu = document.getElementById('countryMenu');
-            btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-            document.addEventListener('click', e => {
-              if (!btn.contains(e.target) && !menu.contains(e.target)) menu.classList.add('hidden');
-            });
-          </script>
-        </div>
       </div>
 
       <!-- Nav secundaria -->
