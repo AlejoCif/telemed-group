@@ -5,33 +5,20 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="icon" href="https://telemed-group.cl/img/TELEMED_LOGO-05.jpg" type="image/jpeg">
-  <title>Visión · TeleMed Group</title>
+  <title>Nosotros · TeleMed Group</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-  /* === Efecto máquina de escribir === */
   .typing-text {
-    display: inline-block;
-    width: 0;
-    white-space: nowrap;
-    overflow: hidden;
+    display: inline-block; width: 0; white-space: nowrap; overflow: hidden;
     animation: typing 2s steps(20, end) forwards, blink 0.7s step-end infinite;
   }
-  @keyframes typing {
-    from { width: 0; }
-    to { width: 20ch; }
-  }
-  @keyframes blink {
-    50% { border-color: transparent; }
-  }
-
-  /* === Figuras de fondo === */
+  @keyframes typing { from { width: 0; } to { width: 20ch; } }
+  @keyframes blink { 50% { border-color: transparent; } }
   body { position: relative; background-color: #ffffff; overflow-x: hidden; }
   .background-shapes { position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
   .shape { position: absolute; opacity: 0.07; filter: blur(0.5px); animation: floaty 10s ease-in-out infinite; }
-  .circle { border-radius: 50%; }
-  .square { border-radius: 16px; }
-  .triangle { width: 0; height: 0; border-left: 80px solid transparent; border-right: 80px solid transparent; border-bottom: 140px solid #0ea5e9; opacity: 0.05; }
+  .circle { border-radius: 50%; } .square { border-radius: 16px; }
+  .triangle { width:0; height:0; border-left:80px solid transparent; border-right:80px solid transparent; border-bottom:140px solid #0ea5e9; opacity:0.05; }
   .shape-blue   { background:#3b82f6; width:260px; height:260px; top:-100px; left:-80px; border-radius:50%; }
   .shape-green  { background:#22c55e; width:200px; height:200px; bottom:-60px; right:-60px; border-radius:20%; }
   .shape-yellow { background:#facc15; width:180px; height:180px; top:40%; left:75%; transform:rotate(25deg); }
@@ -40,10 +27,8 @@
   @keyframes floaty { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-10px) rotate(3deg)} }
   </style>
 </head>
-
 <body class="text-slate-900 overflow-x-hidden">
 
-  <!-- Fondo con figuras geométricas -->
   <div class="background-shapes">
     <div class="shape shape-blue circle"></div>
     <div class="shape shape-green square"></div>
@@ -55,7 +40,6 @@
 
   <div class="relative z-10">
 
-    <!-- Header -->
     <header class="bg-white border-b sticky top-0 z-50">
       <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <div class="flex items-center gap-3">
@@ -64,10 +48,7 @@
           </a>
           <span class="font-semibold text-xl text-[#d38a41] typing-text overflow-hidden whitespace-nowrap border-r-2 border-white pr-2">Estas en Telemed Group</span>
         </div>
-
       </div>
-
-      <!-- Nav secundaria -->
       <nav class="border-t border-gray-100 bg-white">
         <div class="max-w-6xl mx-auto px-4 flex justify-center gap-8">
           <a href="https://telemed-group.cl/mision.html"
@@ -75,7 +56,7 @@
             MISIÓN
           </a>
           <a href="https://telemed-group.cl/vision.html"
-             class="py-2 text-sm font-semibold tracking-widest text-[#d38a41] border-b-2 border-[#d38a41] transition">
+             class="py-2 text-sm font-semibold tracking-widest text-slate-600 hover:text-[#d38a41] border-b-2 border-transparent hover:border-[#d38a41] transition">
             VISIÓN
           </a>
           <a href="#educacion"
@@ -83,7 +64,7 @@
             EDUCACIÓN
           </a>
           <a href="https://telemed-group.cl/nosotros.html"
-             class="py-2 text-sm font-semibold tracking-widest text-slate-600 hover:text-[#d38a41] border-b-2 border-transparent hover:border-[#d38a41] transition">
+             class="py-2 text-sm font-semibold tracking-widest text-[#d38a41] border-b-2 border-[#d38a41] transition">
             NOSOTROS
           </a>
         </div>
@@ -92,60 +73,25 @@
 
     <main class="max-w-4xl mx-auto px-4 py-14 space-y-12">
 
-      <!-- Visión -->
-      <section id="vision" class="bg-orange-50 rounded-2xl p-8 border border-orange-100">
-        <div class="flex items-center gap-3 mb-4">
+      <section id="nosotros" class="bg-orange-50 rounded-2xl p-8 border border-orange-100">
+        <div class="flex items-center gap-3 mb-6">
           <div class="w-10 h-10 rounded-full bg-[#d38a41] flex items-center justify-center text-white">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
           </div>
-          <h2 class="text-2xl font-extrabold text-[#d38a41]">Visión</h2>
+          <h2 class="text-2xl font-extrabold text-[#d38a41]">¿Quiénes Somos?</h2>
         </div>
-        <p class="text-slate-600 text-lg leading-relaxed">
-          Ser un referente en el apoyo integral a personas que enfrentan dolor crónico, logrando que cada paciente alcance un bienestar emocional duradero y una mejor calidad de vida, acompañado por su familia en un entorno de comprensión y empatía.
-        </p>
-      </section>
-
-      <!-- Valores -->
-      <section>
-        <h2 class="text-2xl font-extrabold text-slate-800 mb-6">Valores</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-
-          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 rounded-full bg-[#d38a41]/10 flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#d38a41]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-              </svg>
-            </div>
-            <h3 class="font-bold text-slate-800 text-lg">Humanismo Médico</h3>
-          </div>
-
-          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 rounded-full bg-[#d38a41]/10 flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#d38a41]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-              </svg>
-            </div>
-            <h3 class="font-bold text-slate-800 text-lg">Profesionalidad</h3>
-          </div>
-
-          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 rounded-full bg-[#d38a41]/10 flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-[#d38a41]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
-              </svg>
-            </div>
-            <h3 class="font-bold text-slate-800 text-lg">Responsabilidad</h3>
-          </div>
-
+        <div class="text-slate-600 text-lg leading-relaxed space-y-4">
+          <p>El 12 de octubre de 2017 nace en Chile Telemed-Chile.</p>
+          <p>El objetivo principal es la educación y atención al paciente sobre su procedimiento, la transformación de imágenes médicas, consultas de audio y video en tiempo real. Desde entonces se ha continuado innovando en la implementación de tecnología.</p>
+          <p>Dada esta implementación, Telemed-Chile desarrolló el programa <strong>"Cuidarte"</strong>, que corresponde a la atención domiciliaria para los cuidados paliativos y medicina del dolor.</p>
+          <p>Desde el año 2019 contamos con un programa de Cuidados Paliativos en Colombia, llamado <strong>"Bhavati-Volviendo a Vivir"</strong> entregado por Bhavati - Ips. SAS, el cual nos ha impulsado a seguir creciendo en esta área, con el fin de llevar nuestros conocimientos para el cuidado y educación a cada paciente y familia que está afrontando una enfermedad crónica, degenerativa, irreversible y de alto impacto para su vida.</p>
         </div>
       </section>
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-[#0b0b0b] border-t border-gray-700 text-gray-300 mt-16">
       <div class="max-w-6xl mx-auto px-4 py-8 text-center text-sm space-y-3">
         <p>TeleMed Group © <span id="year"></span>. Todos los derechos reservados.</p>
@@ -159,9 +105,6 @@
     </footer>
 
   </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
