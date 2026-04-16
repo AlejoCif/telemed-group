@@ -48,6 +48,25 @@
 </head>
 
 <body class="text-slate-900 overflow-x-hidden">
+
+  <!-- ===== POPUP BIENVENIDA ===== -->
+  <div id="popup-overlay" class="fixed inset-0 bg-black/60 z-[200] flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center">
+      <img src="https://telemed-group.cl/img/TELEMED_LOGO-05.jpg" alt="logo" class="w-24 h-24 rounded-full object-contain mx-auto mb-4" />
+      <h2 class="text-2xl font-extrabold text-[#d38a41] mb-2">Bienvenido a Telemed Group</h2>
+      <p class="text-slate-500 mb-8">Red asistencial de cuidados paliativos y atención domiciliaria con presencia internacional.</p>
+      <div class="flex flex-col gap-3">
+        <button onclick="document.getElementById('popup-overlay').classList.add('hidden')"
+          class="w-full py-3 rounded-2xl bg-[#d38a41] text-white font-semibold hover:bg-[#c07835] transition">
+          Permanecer en Telemed Group
+        </button>
+        <a href="paises.html"
+          class="w-full py-3 rounded-2xl border-2 border-[#d38a41] text-[#d38a41] font-semibold hover:bg-orange-50 transition block">
+          Seleccionar tu país
+        </a>
+      </div>
+    </div>
+  </div>
   <!-- Fondo con figuras geométricas suaves -->
   <div class="background-shapes">
     <div class="shape shape-blue circle"></div>
