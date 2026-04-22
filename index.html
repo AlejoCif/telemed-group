@@ -50,6 +50,14 @@
 
 <body class="text-slate-900 overflow-x-hidden">
 
+  <!-- Toast de éxito -->
+  <div id="toast-exito" class="hidden fixed top-6 left-1/2 -translate-x-1/2 z-[300] bg-green-600 text-white px-8 py-4 rounded-2xl shadow-xl flex items-center gap-3 text-base font-semibold">
+    <svg class="w-6 h-6 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+    </svg>
+    <span id="toast-msg">¡Mensaje enviado con éxito!</span>
+  </div>
+
   <!-- ===== POPUP BIENVENIDA ===== -->
   <div id="popup-overlay" class="fixed inset-0 bg-black/60 z-[200] flex items-center justify-center p-4">
     <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center">
@@ -228,7 +236,10 @@
           <!-- Usamos entidad HTML para garantizar el acento si el servidor fuerza ISO -->
           <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10">Cont&aacute;ctanos</h2>
 
-          <form action="send_contact.php" method="post" class="bg-white rounded-2xl border shadow-sm p-6 grid gap-5 text-center">
+          <form action="https://formsubmit.co/info@telemed-group.cl" method="post" enctype="multipart/form-data" class="bg-white rounded-2xl border shadow-sm p-6 grid gap-5 text-center">
+            <input type="hidden" name="_subject" value="Contacto - Telemed Group">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://telemed-group.cl/?enviado=contacto">
             <div class="text-left">
               <label class="block text-sm font-medium">Nombre</label>
               <input name="name" required class="mt-2 w-full rounded-xl border px-4 py-3" placeholder="Escribe tu nombre..." />
@@ -255,7 +266,10 @@
           <h2 class="text-3xl md:text-4xl font-extrabold text-center">¿Deseas trabajar con nosotros?</h2>
           <p class="text-slate-500 text-lg text-center mt-3">Adjunta tu CV y nos pondremos en contacto contigo</p>
 
-          <form action="send_work_with_us.php" method="post" enctype="multipart/form-data" class="mt-8" id="workForm">
+          <form action="https://formsubmit.co/info@telemed-group.cl" method="post" enctype="multipart/form-data" class="mt-8" id="workForm">
+            <input type="hidden" name="_subject" value="CV - Trabaja con nosotros - Telemed Group">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://telemed-group.cl/?enviado=cv">
             <div class="rounded-2xl border-2 border-dashed border-gray-300 bg-white p-8 text-center">
               <input type="file" id="cv" name="cv" class="hidden" accept=".pdf,.doc,.docx" />
               <label for="cv" class="cursor-pointer inline-flex flex-col items-center">
@@ -332,6 +346,20 @@
         }
       });
     }
+  </script>
+
+  <script>
+    (function() {
+      const p = new URLSearchParams(window.location.search).get('enviado');
+      if (!p) return;
+      const toast = document.getElementById('toast-exito');
+      const msg = document.getElementById('toast-msg');
+      if (p === 'cv') msg.textContent = '¡Tu CV fue enviado con éxito! Te contactaremos pronto.';
+      else msg.textContent = '¡Mensaje enviado con éxito! Te responderemos a la brevedad.';
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 5000);
+      history.replaceState({}, '', window.location.pathname);
+    })();
   </script>
 </body>
 </html>
